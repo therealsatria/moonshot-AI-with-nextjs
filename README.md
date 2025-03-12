@@ -1,10 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a Moonshot AI chat with Next.Js 
+you can get your own API key at https://www.moonshot.cn/
 
 ## Getting Started
 
 First, run the development server:
+```bash
+First!
 
-copy your moonshot API key at /src/app/api/chat/route.ts
+copy your moonshot API key in /src/app/api/chat/route.ts
+```
+
 
 ```bash
 npm run dev
