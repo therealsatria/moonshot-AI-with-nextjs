@@ -1,4 +1,5 @@
-/* Styling untuk Markdown */
+@import "tailwindcss";
+
 .markdown pre {
   background-color: #f7f7f7;
   padding: 12px;
