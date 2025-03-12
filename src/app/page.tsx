@@ -1,6 +1,9 @@
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:1094773130.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:3408948709.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:3577901246.
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import {HiPaperAirplane} from "react-icons/hi";
@@ -8,6 +11,13 @@ import {HiPaperAirplane} from "react-icons/hi";
 export default function Home() {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<{ sender: string; content: string }[]>([]);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  useEffect(scrollToBottom, [messages]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -107,7 +117,12 @@ export default function Home() {
             </div>
           ))
         )}
+          <div ref={messagesEndRef} />
+          <br></br>
+          <br></br>
+          <br></br>
       </div>
+
         <div className="fixed bottom-0 left-0 right-0 mx-auto w-full max-w-3xl p-6 z-10 bg-gradient-to-br from-gray-50 to-gray-100">
           <form
               onSubmit={handleSubmit}
