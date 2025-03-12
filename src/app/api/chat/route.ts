@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
   const { message } = await req.json();
-  const apiKey = process.env.MOONSHOT_API_KEY || 'sk-GmuivrlKlEkxKLdxJhwgY1DSDtz7hfYD5mmiv952eyxE0rba';
+  const apiKey = process.env.MOONSHOT_API_KEY || 'your-moonshot-api-key';
   const url = 'https://api.moonshot.cn/v1/chat/completions';
 
   try {
