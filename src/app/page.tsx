@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import {HiPaperAirplane} from "react-icons/hi";
 
 export default function Home() {
   const [input, setInput] = useState('');
@@ -107,15 +108,14 @@ export default function Home() {
           ))
         )}
       </div>
-       <div className="fixed bottom-0 left-0 right-0 mx-auto w-full max-w-3xl p-6 z-10 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="fixed bottom-0 left-0 right-0 mx-auto w-full max-w-3xl p-6 z-10 bg-gradient-to-br from-gray-50 to-gray-100">
           <form
               onSubmit={handleSubmit}
-              className="flex items-center w-full shadow-md rounded-full bg-white"
-          >
-                  <input type="text" value={input} onChange={(e) => setInput(e.target.value)} className="flex-1 p-4 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200 text-gray-900 placeholder-gray-500" placeholder="Ketik sesuatu..." />
-                   <button type="submit" className="p-4 bg-blue-500 text-white rounded-full hover:bg-blue-600 mr-1" aria-label="Kirim pesan"> chat </button>
+              className="flex items-center w-full shadow-md rounded-full bg-white">
+                <input type="text" value={input} onChange={(e) => setInput(e.target.value)} className="flex-1 p-4 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200 text-gray-900 placeholder-gray-500" placeholder="Ketik sesuatu..." />
+                <button type="submit" className="p-4 bg-blue-500 text-white rounded-full hover:bg-blue-600 mr-1" aria-label="Kirim pesan"><HiPaperAirplane size={24} /></button>
           </form>
-              </div>
+        </div>
     </div>
     </div>
   );
